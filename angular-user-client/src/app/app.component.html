@@ -1,0 +1,7 @@
+<input type="color" class="js-color-picker color-picker" (change)="onColorChange($event)">
+<input type="range" class="js-line-range" min="1" max="72" value="1" (input)="onLineWidthChange($event)">
+<label class="js-range-value">{{ lineWidth }}</label>Px
+<button class="js-save save" (click)="saveCanvas()">Predict</button>
+<button class="js-clear clear" (click)="clearCanvas()">Clear</button>
+<canvas #paintCanvas class="js-paint paint-canvas" width="600" height="300" (mousedown)="startDrawing($event)"
+    (mousemove)="drawLine($event)" (mouseup)="stopDrawing()" (mouseout)="stopDrawing()"></canvas>
